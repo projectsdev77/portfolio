@@ -1,8 +1,8 @@
 "use client";
 
+import { services } from "@/data/site";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { services } from "@/data/site";
 import SectionHeading from "./SectionHeading";
 
 // A service's image slides in once its heading reaches this far down the viewport.
@@ -11,6 +11,7 @@ const SWITCH_AT = 0.7;
 export default function Services() {
   const gridRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLElement | null)[]>([]);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [reveal, setReveal] = useState(0);
   const [active, setActive] = useState(0);
 
@@ -42,6 +43,19 @@ export default function Services() {
     };
   }, []);
 
+  // Play/pause videos based on active state
+  useEffect(() => {
+    videoRefs.current.forEach((video, i) => {
+      if (video) {
+        if (i === active) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      }
+    });
+  }, [active]);
+
   return (
     <section id="services" className="scroll-mt-4 pt-8 md:pt-12">
       <SectionHeading eyebrow="Service overview" title="Lets bring your ideas to life" />
@@ -58,11 +72,27 @@ export default function Services() {
               className="h-full transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
               style={{ transform: `translateY(-${active * 100}%)` }}
             >
-              {services.map((service) => (
-                <div key={service.image} className="relative h-full">
-                  <Image src={service.image} alt={service.alt} fill sizes="50vw" className="object-cover" />
-                </div>
-              ))}
+              {services.map((service, i) => {
+                const hasVideo = 'media' in service && service.media?.type === 'video';
+                const imageSrc = hasVideo ? null : service.image;
+                
+                return (
+                  <div key={hasVideo ? service.media!.src : service.image} className="relative h-full">
+                    {hasVideo ? (
+                      <video
+                        ref={(el) => { videoRefs.current[i] = el; }}
+                        src={service.media!.src}
+                        className="h-full w-full object-cover"
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <Image src={imageSrc!} alt={service.alt} fill sizes="50vw" className="object-cover" />
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -74,26 +104,42 @@ export default function Services() {
             <span className="absolute top-6 right-6 size-3 border border-brand" />
           </div>
 
-          {services.map((service, i) => (
-            <article
-              key={service.number}
-              ref={(el) => {
-                itemRefs.current[i] = el;
-              }}
-              className="flex flex-col justify-center px-6 py-12 md:min-h-svh md:px-16 md:py-16 lg:px-24"
-            >
-              <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-xl md:hidden">
-                <Image src={service.image} alt={service.alt} fill sizes="90vw" className="object-cover" />
-              </div>
-              <p className="text-lg">{service.number}</p>
-              <h3 className="mt-1 max-w-xs border-b border-ink pb-3 text-3xl leading-tight font-semibold text-brand uppercase md:text-4xl">
-                {service.title[0]}
-                <br />
-                {service.title[1]}
-              </h3>
-              <p className="mt-8 max-w-md text-base leading-relaxed">{service.body}</p>
-            </article>
-          ))}
+          {services.map((service, i) => {
+            const hasVideo = 'media' in service && service.media?.type === 'video';
+            const imageSrc = hasVideo ? null : service.image;
+            
+            return (
+              <article
+                key={service.number}
+                ref={(el) => {
+                  itemRefs.current[i] = el;
+                }}
+                className="flex flex-col justify-center px-6 py-12 md:min-h-svh md:px-16 md:py-16 lg:px-24"
+              >
+                <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-xl md:hidden">
+                  {hasVideo ? (
+                    <video
+                      src={service.media!.src}
+                      className="h-full w-full object-cover"
+                      loop
+                      muted
+                      playsInline
+                      autoPlay
+                    />
+                  ) : (
+                    <Image src={imageSrc!} alt={service.alt} fill sizes="90vw" className="object-cover" />
+                  )}
+                </div>
+                <p className="text-lg">{service.number}</p>
+                <h3 className="mt-1 max-w-xs border-b border-ink pb-3 text-3xl leading-tight font-semibold text-brand uppercase md:text-4xl">
+                  {service.title[0]}
+                  <br />
+                  {service.title[1]}
+                </h3>
+                <p className="mt-8 max-w-md text-base leading-relaxed">{service.body}</p>
+              </article>
+            );
+          })}
 
           <div className="sticky bottom-0 hidden h-0 md:block" aria-hidden>
             <span className="absolute bottom-6 left-6 size-3 border border-brand" />
