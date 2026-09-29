@@ -69,7 +69,7 @@ export default function Services() {
             style={{ transform: `translateX(-${(1 - reveal) * 100}%)` }}
           >
             <div
-              className="h-full transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
+              className="h-full transition-transform duration-1000 ease-out"
               style={{ transform: `translateY(-${active * 100}%)` }}
             >
               {services.map((service, i) => {
