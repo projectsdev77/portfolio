@@ -36,41 +36,89 @@ export const skills = [
   "Accessibility",
 ];
 
+export type ProjectMedia =
+  | { kind: "single"; src: string; alt: string; width: number; height: number }
+  | { kind: "browser"; screens: { src: string; alt: string }[] }
+  | { kind: "phones"; screens: { src: string; alt: string }[] };
+
 export type Project = {
   category: string;
   title: string;
   tags: string[];
-  description: string;
-  href: string;
-  // Path under /public, e.g. "/images/projects/million.jpg". Leave empty to show a placeholder.
-  image?: string;
+  summary: string;
+  features: string[];
+  meta?: { label: string; value: string }[];
+  // Leave empty to hide the "view live" button.
+  href?: string;
+  media: ProjectMedia;
 };
 
-// TODO: placeholder cards. Replace with the final copy, screenshots and live links.
 export const projects: Project[] = [
   {
-    category: "Web App Design & Development",
+    category: "Website Development",
     title: "Million Technologies",
-    tags: ["Next.js", "Tailwind CSS"],
-    description:
-      "Creating a strong online presence for Millennium Technologies to showcase its services.",
-    href: "#",
+    tags: ["Figma to code", "Responsive", "Multi-page site"],
+    summary:
+      "I built the company website for Million Technologies, taking it from Figma to a live site. The goal was a strong online presence that works on every screen.",
+    features: [
+      "Built the Home, About, Services, Projects, Blog and Contact pages from the Figma files",
+      "Responsive layouts that hold up from phones to widescreen monitors",
+      "Handled both the design and the development, so nothing got lost in handoff",
+    ],
+    meta: [
+      { label: "Role", value: "Design & development" },
+      { label: "Timeline", value: "Oct – Dec 2024" },
+    ],
+    media: {
+      kind: "single",
+      src: "/images/projects/mtechs-laptop.jpg",
+      alt: "Million Technologies website shown on a laptop",
+      width: 575,
+      height: 504,
+    },
   },
   {
-    category: "Mobile Application",
-    title: "Aircraft Parts Marketplace App",
-    tags: ["React", "TypeScript"],
-    description:
-      "Mobile-first B2B app that helps aviation mechanics and fleet operators find, order, and track parts.",
-    href: "#",
+    category: "Mobile App Development",
+    title: "Noren Real Estate & Rentals",
+    tags: ["Mobile app", "Maps", "AI", "Dark mode"],
+    summary:
+      "A mobile app for buying, selling and renting property in Ethiopia. People search on a map, compare listings and reach the owner or broker in one tap.",
+    features: [
+      "Map search with Buy and Rent filters, and sorting by newest or price",
+      "Listing pages with a photo gallery, key facts and one-tap Call or WhatsApp",
+      "Step-by-step listing form with city and sub-city pickers, a map pin or current location, and prices in ETB or USD",
+      "“Generate with AI” writes the listing description, with an option to include Amharic",
+      "Saved listings, account management and light, dark or system theme",
+    ],
+    media: {
+      kind: "phones",
+      screens: [
+        { src: "/images/projects/noren-explore.jpg", alt: "Noren map search with listing results" },
+        { src: "/images/projects/noren-listing.jpg", alt: "Noren listing detail with Call and WhatsApp buttons" },
+        { src: "/images/projects/noren-post.jpg", alt: "Noren post listing form with Generate with AI" },
+      ],
+    },
   },
   {
-    category: "Template System",
-    title: "Premium Resume Templates",
-    tags: ["React", "Responsive UI"],
-    description:
-      "A collection of 10 modern, ATS-friendly resume templates for a resume editing application.",
-    href: "#",
+    category: "Web Platform Development",
+    title: "Become an AI Engineer",
+    tags: ["Web app", "Auth", "AI feedback", "Progress tracking"],
+    summary:
+      "A self-paced, 12-week learning platform for developers moving into AI engineering. Weeks unlock in order, and every assignment gets feedback.",
+    features: [
+      "Landing page, sign-up and login with email or Google",
+      "Dashboard with a “continue where you left off” card, per-week progress and overall stats",
+      "Sequenced curriculum: finishing one week unlocks the next",
+      "Instant AI feedback on each submission, with the option to ask a human mentor",
+    ],
+    href: "https://ai-engineer-bootcamp-beta.vercel.app",
+    media: {
+      kind: "browser",
+      screens: [
+        { src: "/images/projects/bootcamp-home.jpg", alt: "Become an AI Engineer landing page" },
+        { src: "/images/projects/bootcamp-dashboard.jpg", alt: "Become an AI Engineer learner dashboard" },
+      ],
+    },
   },
 ];
 

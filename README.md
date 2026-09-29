@@ -15,7 +15,7 @@ npm run lint
 
 All text and links live in [`src/data/site.ts`](src/data/site.ts): hero copy, skills strip, projects, services, testimonials and contact links. The About copy is in [`src/components/About.tsx`](src/components/About.tsx).
 
-Images are in `public/images/`. To add a project screenshot, put it in `public/images/projects/` and set `image: "/images/projects/<file>"` on that project.
+Images are in `public/images/`. Project screenshots go in `public/images/projects/`. Each project picks a `media` layout: `single` (one image), `browser` (a main screen in a browser frame plus an overlapping second screen) or `phones` (three phone screens). Set `href` to show a "view live site" button.
 
 ## Sections
 
@@ -24,7 +24,7 @@ Images are in `public/images/`. To add a project screenshot, put it in `public/i
 | `Navbar` | Sticky nav with a mobile menu |
 | `Hero` | Big title with the portrait layered between the filled and outlined copies |
 | `SkillsMarquee` | Scrolling skills strip (stops when reduced motion is on) |
-| `Projects` | Project cards |
+| `Projects` | Project cards with summary, role/timeline, feature list and screenshots |
 | `Services` | Sticky image column that crossfades as each service scrolls into view |
 | `Testimonials` | Client quotes (dots appear when there's more than one) |
 | `About` | About me, with contact shortcuts |
