@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { links } from "@/data/site";
+import Image from "next/image";
 import { ArrowIcon, LinkedInIcon, MailIcon } from "./icons";
 
 function Mark({ children }: { children: React.ReactNode }) {
@@ -44,7 +44,7 @@ export default function About() {
           <div className="relative -mt-16 w-36 sm:-mt-28 sm:w-48 md:w-56">
             <div className="relative aspect-[250/408] overflow-hidden rounded-2xl">
               <Image
-                src="/images/about-portrait.jpg"
+                src="/images/about-portrait.png"
                 alt="Meaza Tadele smiling"
                 fill
                 sizes="224px"
