@@ -4,9 +4,9 @@
 export const links = {
   email: "meazialemayehu16@gmail.com",
   // TODO: replace with your real profile URLs.
-  linkedin: "https://www.linkedin.com/",
-  github: "https://github.com/projectsdev77",
-  upwork: "https://www.upwork.com/",
+  linkedin: "https://www.linkedin.com/in/meaza-alemayehu",
+  github: "https://github.com/MeazaTadele",
+  upwork: "https://www.upwork.com/freelancers/~012919e73a323fde13",
   // Drop your CV into /public as resume.pdf.
   resume: "/resume.pdf",
 };
