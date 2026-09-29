@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { hero } from "@/data/site";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -7,15 +7,15 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-[calc(100svh-var(--nav-h))] flex-col items-center overflow-hidden px-4 [--t:min(15vw,17rem)] md:[--t:min(13.5vw,30svh)]"
     >
-      <p className="mt-[8svh] text-center text-sm md:mt-[14svh] md:text-xl">
+      <p className="mt-[8svh] text-center text-xs md:mt-[14svh] md:text-lg">
         Hi, my name is{" "}
-        <span className="text-xl text-brand md:text-[1.875rem]">{hero.name}</span> and I am a
+        <span className="text-lg text-brand md:text-[1.625rem]">{hero.name}</span> and I am a
       </p>
 
       <div className="relative mt-12 md:mt-[calc(var(--t)*0.42)]">
         <span
           aria-hidden
-          className="absolute bottom-[86%] left-1/2 z-30 -translate-x-1/2 font-hand text-[max(1.5rem,calc(var(--t)*0.3))] leading-none whitespace-nowrap [-webkit-text-stroke:0.03em_currentColor]"
+          className="absolute bottom-[86%] left-1/2 z-30 -translate-x-1/2 font-hand font-light text-[max(1.5rem,calc(var(--t)*0.3))] leading-none whitespace-nowrap [-webkit-text-stroke:0.03em_currentColor]"
         >
           {hero.kicker}
         </span>
@@ -44,15 +44,15 @@ export default function Hero() {
           {hero.title}
         </span>
 
-        <p className="absolute top-full left-0 mt-[calc(var(--t)*0.13)] hidden text-[calc(var(--t)*0.11)] font-semibold whitespace-nowrap md:block">
+        <p className="absolute top-full left-0 mt-[calc(var(--t)*0.13)] hidden text-[calc(var(--t)*0.1)] font-semibold whitespace-nowrap md:block">
           {hero.left}
         </p>
-        <p className="absolute top-full right-0 mt-[calc(var(--t)*0.13)] hidden text-[calc(var(--t)*0.11)] font-semibold whitespace-nowrap md:block">
+        <p className="absolute top-full right-0 mt-[calc(var(--t)*0.13)] hidden text-[calc(var(--t)*0.1)] font-semibold whitespace-nowrap md:block">
           {hero.right}
         </p>
       </div>
 
-      <p className="relative z-20 mt-5 flex flex-wrap justify-center gap-x-3 text-base font-semibold md:hidden">
+      <p className="relative z-20 mt-5 flex flex-wrap justify-center gap-x-3 text-sm font-semibold md:hidden">
         <span>{hero.left}</span>
         <span aria-hidden className="text-brand">
           ·

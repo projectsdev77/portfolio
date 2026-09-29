@@ -22,8 +22,8 @@ export const hero = {
   name: "Meaza Tadele",
   kicker: "Frontend",
   title: "DEVELOPER",
-  left: "Interface Engineer",
-  right: "Design-minded Coder",
+  left: "Interface Alchemist",
+  right: "Experience Crafter",
 };
 
 export const skills = [
