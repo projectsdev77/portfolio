@@ -6,6 +6,7 @@ export const links = {
   // TODO: replace with your real profile URLs.
   linkedin: "https://www.linkedin.com/",
   github: "https://github.com/projectsdev77",
+  upwork: "https://www.upwork.com/",
   // Drop your CV into /public as resume.pdf.
   resume: "/resume.pdf",
 };

@@ -25,6 +25,6 @@ Images are in `public/images/`. Project screenshots go in `public/images/project
 | `Hero` | Full-screen intro: big title with the portrait layered between the filled and outlined copies |
 | `SkillsMarquee` | Scrolling skills strip (stops when reduced motion is on) |
 | `Projects` | Project cards with tech stack, summary, key features and screenshots |
-| `Services` | Image panel that grows in as the section enters, then slides to each service's image; corner squares pin to the screen edges |
+| `Services` | Image panel that slides in from the left as the section enters, then slides to each service's image; corner squares pin to the screen edges |
 | `About` | About me, with contact shortcuts |
 | `Contact` | Email, LinkedIn, GitHub, Résumé |

@@ -47,12 +47,12 @@ export default function Services() {
       <SectionHeading eyebrow="Service overview" title="Lets bring your ideas to life" />
 
       <div ref={gridRef} className="mt-12 md:mt-20 md:grid md:grid-cols-2">
-        {/* Desktop image panel: grows out of the bottom-left corner as the section scrolls in,
+        {/* Desktop image panel: slides in from the left as the section scrolls in,
             then stays pinned while each service's image slides up into view. */}
         <div className="sticky top-0 hidden h-svh md:block">
           <div
-            className="absolute top-0 left-0 overflow-hidden"
-            style={{ width: `${reveal * 100}%`, height: `${reveal * 100}%` }}
+            className="absolute inset-0 overflow-hidden"
+            style={{ transform: `translateX(-${(1 - reveal) * 100}%)` }}
           >
             <div
               className="h-full transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"

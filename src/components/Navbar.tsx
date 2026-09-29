@@ -38,12 +38,12 @@ export default function Navbar() {
               Let&apos;s Talk
             </a>
             <a
-              href={links.github}
+              href={links.upwork}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl border border-ink px-5 py-3 text-sm font-medium transition hover:bg-ink hover:text-white lg:px-7 lg:py-3.5 lg:text-[1.0625rem]"
             >
-              GitHub
+              Upwork
             </a>
           </div>
         </div>
@@ -91,12 +91,12 @@ export default function Navbar() {
               Let&apos;s Talk
             </a>
             <a
-              href={links.github}
+              href={links.upwork}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-ink px-4 py-2 text-sm font-medium"
             >
-              GitHub
+              Upwork
             </a>
           </div>
         </div>
