@@ -12,7 +12,7 @@ function Media({ media }: { media: ProjectMedia }) {
         width={media.width}
         height={media.height}
         sizes="(min-width: 768px) 440px, 90vw"
-        className="h-auto w-full rounded-2xl"
+        className="h-auto w-full rounded-2xl mix-blend-multiply"
       />
     );
   }
@@ -50,7 +50,7 @@ function Media({ media }: { media: ProjectMedia }) {
 export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-20 px-4 py-16 md:py-24">
-      <div className="mx-auto max-w-5xl bg-white px-4 py-12 md:px-10 md:py-16">
+      <div className="mx-auto max-w-5xl md:px-6">
         <SectionHeading eyebrow="featured projects" title="Design that gets results" />
 
         <ul className="mt-12 flex flex-col gap-10 md:mt-16">
@@ -87,7 +87,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
                   >
-                    view live site<span className="sr-only">: {project.title} (opens in a new tab)</span>
+                    {project.linkLabel ?? "view live site"}<span className="sr-only">: {project.title} (opens in a new tab)</span>
                     <ArrowIcon className="size-3.5" />
                   </a>
                 )}

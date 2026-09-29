@@ -3,7 +3,7 @@
 @theme {
   --color-paper: #f4f1ec;
   --color-ink: #111111;
-  --color-brand: #b3111f;
+  --color-brand: #c0211e;
   --color-brand-soft: #eccaca;
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-hand: var(--font-hand), "Comic Sans MS", cursive;
@@ -21,6 +21,16 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+:root {
+  --nav-h: 4.5rem;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --nav-h: 5.75rem;
+  }
 }
 
 body {

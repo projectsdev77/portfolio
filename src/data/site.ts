@@ -14,7 +14,6 @@ export const nav = [
   { label: "Home", href: "#home" },
   { label: "Projects", href: "#projects" },
   { label: "Services", href: "#services" },
-  { label: "Testimony", href: "#testimony" },
   { label: "About", href: "#about" },
 ];
 
@@ -47,8 +46,9 @@ export type Project = {
   stack: string[];
   summary: string;
   features: string[];
-  // Leave empty to hide the "view live site" button.
+  // Leave empty to hide the link button.
   href?: string;
+  linkLabel?: string;
   media: ProjectMedia;
 };
 
@@ -64,12 +64,13 @@ export const projects: Project[] = [
       "Responsive from phones to widescreen",
       "Designed and developed end to end",
     ],
+    href: "https://mtechsportfolio-cauddq7up-meaza-tadeles-projects.vercel.app/",
     media: {
       kind: "single",
-      src: "/images/projects/mtechs-laptop.jpg",
+      src: "/images/projects/mtechs-laptop.png",
       alt: "Million Technologies website shown on a laptop",
-      width: 575,
-      height: 504,
+      width: 526,
+      height: 373,
     },
   },
   {
@@ -83,6 +84,8 @@ export const projects: Project[] = [
       "One-tap Call or WhatsApp on every listing",
       "AI-written listing descriptions, in Amharic too",
     ],
+    href: "https://play.google.com/store/apps/details?id=com.nor.realestate",
+    linkLabel: "get it on Google Play",
     media: {
       kind: "single",
       src: "/images/projects/noren-mockup.jpg",
@@ -135,17 +138,5 @@ export const services = [
     body: "I build micro-interactions and transitions in code that feel smooth, load fast, and respect users' reduced-motion settings.",
     image: "/images/service-motion.jpg",
     alt: "Laptop showing a company website",
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "She designed and built our website from Figma and handled both design and development. The final site looks good and works well on different devices. She was easy to communicate with and delivered what we asked for.",
-    name: "Yosef Abate",
-    role: "Founder, Million Technologies",
-    period: "Oct 24, 2024 - Dec 7, 2024",
-    rating: 5,
-    avatar: "/images/testimonial-yosef.jpg",
   },
 ];

@@ -7,21 +7,21 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-paper/85 backdrop-blur">
+    <header className="relative z-50 h-(--nav-h)">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"
+        className="flex h-full items-center justify-between px-5 md:px-[7.4vw]"
       >
         <a
           href="#home"
           aria-label="Meaza Tadele, home"
-          className="grid size-9 place-items-center rounded-lg bg-ink text-sm font-bold text-white"
+          className="grid size-9 place-items-center rounded-lg bg-ink text-sm font-bold text-white md:size-11 md:text-base"
         >
           M
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
-          <ul className="flex items-center gap-6 text-sm font-medium">
+        <div className="hidden items-center gap-8 md:flex lg:gap-9">
+          <ul className="flex items-center gap-6 text-sm font-medium lg:gap-8 lg:text-[1.0625rem]">
             {nav.map((item) => (
               <li key={item.href}>
                 <a href={item.href} className="transition-colors hover:text-brand">
@@ -33,7 +33,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <a
               href="#contact"
-              className="rounded-xl bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-brand"
+              className="rounded-2xl bg-ink px-5 py-3 text-sm font-medium text-white transition hover:bg-brand lg:px-7 lg:py-3.5 lg:text-[1.0625rem]"
             >
               Let&apos;s Talk
             </a>
@@ -41,7 +41,7 @@ export default function Navbar() {
               href={links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-ink px-4 py-2 text-sm font-medium transition hover:bg-ink hover:text-white"
+              className="rounded-2xl border border-ink px-5 py-3 text-sm font-medium transition hover:bg-ink hover:text-white lg:px-7 lg:py-3.5 lg:text-[1.0625rem]"
             >
               GitHub
             </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-ink/10 px-5 pb-6 md:hidden">
+        <div id="mobile-menu" className="absolute inset-x-0 top-full border-t border-ink/10 bg-paper px-5 pb-6 shadow-lg md:hidden">
           <ul className="flex flex-col gap-1 py-3 text-base font-medium">
             {nav.map((item) => (
               <li key={item.href}>

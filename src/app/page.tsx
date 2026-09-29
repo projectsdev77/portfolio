@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import SkillsMarquee from "@/components/SkillsMarquee";
-import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
         <SkillsMarquee />
         <Projects />
         <Services />
-        <Testimonials />
         <About />
         <Contact />
       </main>
