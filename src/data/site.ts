@@ -38,17 +38,16 @@ export const skills = [
 
 export type ProjectMedia =
   | { kind: "single"; src: string; alt: string; width: number; height: number }
-  | { kind: "browser"; screens: { src: string; alt: string }[] }
-  | { kind: "phones"; screens: { src: string; alt: string }[] };
+  // Browser windows cascading back to front; the last screen sits on top.
+  | { kind: "browser"; screens: { src: string; alt: string }[] };
 
 export type Project = {
   category: string;
   title: string;
-  tags: string[];
+  stack: string[];
   summary: string;
   features: string[];
-  meta?: { label: string; value: string }[];
-  // Leave empty to hide the "view live" button.
+  // Leave empty to hide the "view live site" button.
   href?: string;
   media: ProjectMedia;
 };
@@ -57,17 +56,13 @@ export const projects: Project[] = [
   {
     category: "Website Development",
     title: "Million Technologies",
-    tags: ["Figma to code", "Responsive", "Multi-page site"],
+    stack: ["Astro", "React", "Tailwind CSS"],
     summary:
-      "I built the company website for Million Technologies, taking it from Figma to a live site. The goal was a strong online presence that works on every screen.",
+      "Company website I took from Figma to production, built to give Million Technologies a strong online presence.",
     features: [
-      "Built the Home, About, Services, Projects, Blog and Contact pages from the Figma files",
-      "Responsive layouts that hold up from phones to widescreen monitors",
-      "Handled both the design and the development, so nothing got lost in handoff",
-    ],
-    meta: [
-      { label: "Role", value: "Design & development" },
-      { label: "Timeline", value: "Oct – Dec 2024" },
+      "Six pages built from the Figma design",
+      "Responsive from phones to widescreen",
+      "Designed and developed end to end",
     ],
     media: {
       kind: "single",
@@ -80,36 +75,32 @@ export const projects: Project[] = [
   {
     category: "Mobile App Development",
     title: "Noren Real Estate & Rentals",
-    tags: ["Mobile app", "Maps", "AI", "Dark mode"],
+    stack: ["Flutter", "Tailwind CSS"],
     summary:
-      "A mobile app for buying, selling and renting property in Ethiopia. People search on a map, compare listings and reach the owner or broker in one tap.",
+      "An app for buying, selling and renting property in Ethiopia, with map search and one-tap contact.",
     features: [
-      "Map search with Buy and Rent filters, and sorting by newest or price",
-      "Listing pages with a photo gallery, key facts and one-tap Call or WhatsApp",
-      "Step-by-step listing form with city and sub-city pickers, a map pin or current location, and prices in ETB or USD",
-      "“Generate with AI” writes the listing description, with an option to include Amharic",
-      "Saved listings, account management and light, dark or system theme",
+      "Map search with Buy/Rent filters and sorting",
+      "One-tap Call or WhatsApp on every listing",
+      "AI-written listing descriptions, in Amharic too",
     ],
     media: {
-      kind: "phones",
-      screens: [
-        { src: "/images/projects/noren-explore.jpg", alt: "Noren map search with listing results" },
-        { src: "/images/projects/noren-listing.jpg", alt: "Noren listing detail with Call and WhatsApp buttons" },
-        { src: "/images/projects/noren-post.jpg", alt: "Noren post listing form with Generate with AI" },
-      ],
+      kind: "single",
+      src: "/images/projects/noren-mockup.jpg",
+      alt: "Three phones showing Noren's listing, map search and saved screens",
+      width: 1224,
+      height: 1050,
     },
   },
   {
     category: "Web Platform Development",
     title: "Become an AI Engineer",
-    tags: ["Web app", "Auth", "AI feedback", "Progress tracking"],
+    stack: ["Next.js", "Tailwind CSS"],
     summary:
-      "A self-paced, 12-week learning platform for developers moving into AI engineering. Weeks unlock in order, and every assignment gets feedback.",
+      "A self-paced, 12-week learning platform for developers moving into AI engineering.",
     features: [
-      "Landing page, sign-up and login with email or Google",
-      "Dashboard with a “continue where you left off” card, per-week progress and overall stats",
-      "Sequenced curriculum: finishing one week unlocks the next",
-      "Instant AI feedback on each submission, with the option to ask a human mentor",
+      "Email and Google sign-in",
+      "Progress dashboard with weeks that unlock in order",
+      "Instant AI feedback, with a human mentor on request",
     ],
     href: "https://ai-engineer-bootcamp-beta.vercel.app",
     media: {
@@ -117,6 +108,7 @@ export const projects: Project[] = [
       screens: [
         { src: "/images/projects/bootcamp-home.jpg", alt: "Become an AI Engineer landing page" },
         { src: "/images/projects/bootcamp-dashboard.jpg", alt: "Become an AI Engineer learner dashboard" },
+        { src: "/images/projects/bootcamp-login.jpg", alt: "Become an AI Engineer login page" },
       ],
     },
   },
