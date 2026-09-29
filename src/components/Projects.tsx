@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { projects, type ProjectMedia } from "@/data/site";
+import Image from "next/image";
 import { ArrowIcon } from "./icons";
 import SectionHeading from "./SectionHeading";
 
@@ -12,7 +12,7 @@ function Media({ media }: { media: ProjectMedia }) {
         width={media.width}
         height={media.height}
         sizes="(min-width: 768px) 440px, 90vw"
-        className="h-auto w-full rounded-2xl mix-blend-multiply"
+        className="h-auto w-full rounded-2xl object-contain mix-blend-multiply"
       />
     );
   }
@@ -57,7 +57,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <li
               key={project.title}
-              className="grid items-center gap-8 rounded-3xl border border-ink/50 p-6 md:grid-cols-2 md:p-9"
+              className="grid items-center gap-8 rounded-3xl border border-ink/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60 hover:shadow-xl md:grid-cols-2 md:p-9"
             >
               <div className={i % 2 === 1 ? "order-2" : "order-2 md:order-1"}>
                 <p className="text-base text-ink/80 md:text-lg">{project.category}</p>
