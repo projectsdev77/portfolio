@@ -123,14 +123,14 @@ export const services = [
     number: "01",
     title: ["Frontend", "Development"],
     body: "I transform complex design files into fast, maintainable user interfaces using modern frameworks. My focus is on writing well-structured code, leveraging reusable components, and architecting clean, scalable state management.",
-    image: "/images/service-frontend.jpg",
+    image: "/images/service-frontend.png",
     alt: "Phone showing a marketplace app interface",
   },
   {
     number: "02",
     title: ["Responsive", "Web & Apps"],
     body: "I build seamless digital experiences that adapt dynamically to any device, from mobile screens to ultrawide monitors. Every interface is crafted with semantic HTML, intuitive keyboard navigation, and high-contrast accessibility standards.",
-    image: "/images/service-responsive.jpg",
+    image: "/images/service-responsive.png",
     alt: "Laptop showing an online merch store",
   },
   {
