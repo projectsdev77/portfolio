@@ -137,7 +137,7 @@ export const services = [
     number: "03",
     title: ["Interaction", "& Motion"],
     body: "I build micro-interactions and transitions in code that feel smooth, load fast, and respect users' reduced-motion settings.",
-    media: { type: "video", src: "/videos/service-motion.mp4" },
+    media: { type: "video", src: "/images/service-motion.mp4" },
     alt: "Laptop showing a company website with animations",
   },
 ];
