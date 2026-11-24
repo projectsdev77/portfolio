@@ -67,7 +67,7 @@ export const projects: Project[] = [
       "Responsive from phones to widescreen",
       "Designed and developed end to end",
     ],
-    href: "https://mtechsportfolio.vercel.app/",
+    href: "https://mtechs-zofx.vercel.app/",
     media: {
       kind: "single",
       src: "/images/projects/mtechs-laptop.png",
