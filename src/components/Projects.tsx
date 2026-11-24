@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowIcon } from "./icons";
 import SectionHeading from "./SectionHeading";
 
-function Media({ media, wide }: { media: ProjectMedia; wide?: boolean }) {
+function Media({ media }: { media: ProjectMedia }) {
   if (media.kind === "single") {
     return (
       <Image
@@ -11,8 +11,8 @@ function Media({ media, wide }: { media: ProjectMedia; wide?: boolean }) {
         alt={media.alt}
         width={media.width}
         height={media.height}
-        sizes={wide ? "(min-width: 768px) 600px, 90vw" : "(min-width: 768px) 440px, 90vw"}
-        className="h-auto w-full object-contain"
+        sizes="(min-width: 768px) 440px, 90vw"
+        className="h-auto w-full rounded-2xl object-contain mix-blend-multiply"
       />
     );
   }
@@ -57,7 +57,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <li
               key={project.title}
-              className={`grid items-center gap-8 rounded-3xl border border-ink/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60 hover:shadow-xl md:p-9 ${project.wideMedia ? (i % 2 === 1 ? "md:grid-cols-[7fr_5fr]" : "md:grid-cols-[5fr_7fr]") : "md:grid-cols-2"}`}
+              className="grid items-center gap-8 rounded-3xl border border-ink/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60 hover:shadow-xl md:grid-cols-2 md:p-9"
             >
               <div className={i % 2 === 1 ? "order-2" : "order-2 md:order-1"}>
                 <p className="text-base text-ink/80 md:text-lg">{project.category}</p>
@@ -93,10 +93,8 @@ export default function Projects() {
                 )}
               </div>
 
-              <div
-                className={`${i % 2 === 1 ? "order-1" : "order-1 md:order-2"} ${project.wideMedia ? (i % 2 === 1 ? "md:-ml-5" : "md:-mr-5") : ""}`}
-              >
-                <Media media={project.media} wide={project.wideMedia} />
+              <div className={i % 2 === 1 ? "order-1" : "order-1 md:order-2"}>
+                <Media media={project.media} />
               </div>
             </li>
           ))}

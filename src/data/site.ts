@@ -52,8 +52,6 @@ export type Project = {
   // Leave empty to hide the link button.
   href?: string;
   linkLabel?: string;
-  // Give the media column more of the card, for wide images.
-  wideMedia?: boolean;
   media: ProjectMedia;
 };
 
@@ -70,13 +68,12 @@ export const projects: Project[] = [
       "Designed and developed end to end",
     ],
     href: "https://mtechs-zofx.vercel.app/",
-    wideMedia: true,
     media: {
       kind: "single",
-      src: "/images/projects/mtechs-mockup.png",
-      alt: "Million Technologies website pages shown on a desktop monitor and two floating screens",
-      width: 1068,
-      height: 410,
+      src: "/images/projects/mtechs-laptop.png",
+      alt: "Million Technologies website shown on a laptop",
+      width: 526,
+      height: 373,
     },
   },
   {
@@ -94,10 +91,10 @@ export const projects: Project[] = [
     linkLabel: "get it on Google Play",
     media: {
       kind: "single",
-      src: "/images/projects/noren-mockup.png",
+      src: "/images/projects/noren-mockup.jpg",
       alt: "Three phones showing Noren's listing, map search and saved screens",
-      width: 900,
-      height: 709,
+      width: 1224,
+      height: 1050,
     },
   },
   {
