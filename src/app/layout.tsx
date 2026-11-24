@@ -15,9 +15,9 @@ const hand = Gochi_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "Meaza Tadele | Frontend Developer",
+  title: "Meaza Tadele | Full-Stack Developer",
   description:
-    "Meaza Tadele is a frontend developer in Addis Ababa who builds fast, accessible interfaces with React, TypeScript, Next.js and Tailwind CSS.",
+    "Meaza Tadele is a full-stack web developer in Addis Ababa with a UI/UX design background, building fast, accessible web apps with React, Next.js, TypeScript, Node.js and PostgreSQL.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -20,20 +20,22 @@ export const nav = [
 
 export const hero = {
   name: "Meaza Tadele",
-  kicker: "Frontend",
-  title: "DEVELOPER",
+  kicker: "Full-Stack",
+  // Rendered in capitals by CSS; kept in title case so the page text reads naturally.
+  title: "Developer",
   left: "Interface Alchemist",
   right: "Experience Crafter",
 };
 
-export const skills = [
-  "React",
-  "TypeScript",
-  "Next.js",
-  "Tailwind CSS",
-  "JavaScript",
-  "Responsive UI",
-  "Accessibility",
+export const skillGroups = [
+  {
+    label: "Frontend",
+    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "JavaScript", "Responsive UI", "Accessibility"],
+  },
+  {
+    label: "Backend",
+    skills: ["Node.js", "Express", "PostgreSQL", "Supabase", "MongoDB", "REST APIs", "Stripe", "Git", "Docker"],
+  },
 ];
 
 export type ProjectMedia =
@@ -77,7 +79,7 @@ export const projects: Project[] = [
   {
     category: "Mobile App Development",
     title: "Noren Real Estate & Rentals",
-    stack: ["Flutter", "Tailwind CSS"],
+    stack: ["Flutter", "Node.js", "PostgreSQL"],
     summary:
       "An app for buying, selling and renting property in Ethiopia, with map search and one-tap contact.",
     features: [
@@ -121,8 +123,8 @@ export const projects: Project[] = [
 export const services = [
   {
     number: "01",
-    title: ["Frontend", "Development"],
-    body: "I transform complex design files into fast, maintainable user interfaces using modern frameworks. My focus is on writing well-structured code, leveraging reusable components, and architecting clean, scalable state management.",
+    title: ["Full-Stack", "Development"],
+    body: "I build complete web applications, from fast, maintainable user interfaces to the APIs and databases behind them. My focus is on writing well-structured code, leveraging reusable components, and building clean, scalable REST APIs with Node.js, Express and PostgreSQL.",
     image: "/images/service-frontend.png",
     alt: "Phone showing a marketplace app interface",
   },

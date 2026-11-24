@@ -1,4 +1,9 @@
-import { skills } from "@/data/site";
+import { skillGroups } from "@/data/site";
+
+const skills = skillGroups.flatMap((group) => group.skills);
+// The track moves half its width per loop, so scale the duration with the item count
+// to keep the scroll speed the same as the original seven-item, 40s strip.
+const duration = `${(skills.length / 7) * 40}s`;
 
 function Row() {
   return (
@@ -16,9 +21,14 @@ function Row() {
 export default function SkillsMarquee() {
   return (
     <div className="relative z-20 overflow-hidden border-y-2 border-ink bg-paper py-3">
-      <p className="sr-only">Skills: {skills.join(", ")}</p>
+      <p className="sr-only">
+        {skillGroups.map((group) => `${group.label} skills: ${group.skills.join(", ")}.`).join(" ")}
+      </p>
       {/* Four copies: the track slides by half its width, so the loop never shows a gap. */}
-      <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+      <div
+        className="flex w-max animate-marquee hover:[animation-play-state:paused]"
+        style={{ animationDuration: duration }}
+      >
         <Row />
         <Row />
         <Row />

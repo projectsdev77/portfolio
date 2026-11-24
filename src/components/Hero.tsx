@@ -10,6 +10,11 @@ export default function Hero() {
       <p className="mt-[8svh] text-center text-xs md:mt-[14svh] md:text-lg">
         Hi, my name is{" "}
         <span className="text-lg text-brand md:text-[1.625rem]">{hero.name}</span> and I am a
+        {/* The big title below finishes this sentence visually; this keeps it whole in the page text. */}
+        <span className="sr-only">
+          {" "}
+          {hero.kicker} {hero.title}.
+        </span>
       </p>
 
       <div className="relative mt-12 md:mt-[calc(var(--t)*0.42)]">
@@ -19,8 +24,8 @@ export default function Hero() {
         >
           {hero.kicker}
         </span>
-        <h1 className="text-[length:var(--t)] leading-[0.8] font-bold tracking-tight text-brand">
-          <span className="sr-only">{hero.kicker} </span>
+        <h1 className="text-[length:var(--t)] leading-[0.8] font-bold tracking-tight text-brand uppercase">
+          <span className="sr-only normal-case">{hero.kicker} </span>
           {hero.title}
         </h1>
 
@@ -39,7 +44,7 @@ export default function Hero() {
 
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-20 text-[length:var(--t)] leading-[0.8] font-bold tracking-tight text-transparent [-webkit-text-stroke:2px_var(--color-brand)]"
+          className="pointer-events-none absolute inset-0 z-20 text-[length:var(--t)] leading-[0.8] font-bold tracking-tight text-transparent uppercase [-webkit-text-stroke:2px_var(--color-brand)]"
         >
           {hero.title}
         </span>

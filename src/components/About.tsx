@@ -75,12 +75,13 @@ export default function About() {
 
         <div className="space-y-6 text-base leading-relaxed md:text-lg">
           <p>
-            Hey, I&apos;m Meaza, a Software Engineering graduate and <Mark>Frontend Developer</Mark>{" "}
+            Hey, I&apos;m Meaza, a Software Engineering graduate and <Mark>Full-Stack Developer</Mark>{" "}
             based in Addis Ababa.
           </p>
           <p>
             I <Mark>started out writing code</Mark>, moved into design, and came back to building. Now I
-            ship interfaces that match the design pixel for pixel and hold up in production.
+            build full-stack web apps, from interfaces that match the design pixel for pixel to the APIs
+            and databases behind them, and they hold up in production.
           </p>
           <p>
             What I really like is working at the <Mark>intersection of both worlds</Mark>. I build with
