@@ -70,10 +70,10 @@ export const projects: Project[] = [
     href: "https://mtechs-zofx.vercel.app/",
     media: {
       kind: "single",
-      src: "/images/projects/mtechs-laptop.png",
-      alt: "Million Technologies website shown on a laptop",
-      width: 526,
-      height: 373,
+      src: "/images/projects/mtechs-mockup.jpg",
+      alt: "Million Technologies website pages shown on a desktop monitor and two floating screens",
+      width: 1333,
+      height: 800,
     },
   },
   {
